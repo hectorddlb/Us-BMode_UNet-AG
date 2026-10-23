@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "us-bmode-unet-ag"
+version = "1.0.0"
+description = "Reconstrucción B-mode de ultrasonido desde una sola onda plana con una UNet informada por el F-number dependiente de la frecuencia (UNet-AG)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Héctor David De Lara Berumen" }]
+keywords = ["ultrasound", "beamforming", "plane-wave", "deep-learning", "b-mode"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "torch>=2.0",
+  "numpy>=1.24",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+picmus = ["h5py>=3.8"]            # leer ficheros RF de PICMUS
+figuras = ["matplotlib>=3.7"]      # salida en PNG
+todo   = ["h5py>=3.8", "matplotlib>=3.7"]
+
+[project.scripts]
+unetag = "unet_ag.cli:main"
+
+[project.urls]
+Repositorio = "https://github.com/hectorddlb/Us-BMode_UNet-AG"
+
+[tool.setuptools]
+package-dir = { "" = "codigo" }
+
+[tool.setuptools.packages.find]
+where = ["codigo"]
+include = ["unet_ag*", "schiffner_das*"]
+
+[tool.setuptools.package-data]
+unet_ag = ["py.typed"]

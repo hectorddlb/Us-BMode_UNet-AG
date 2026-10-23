@@ -37,7 +37,7 @@ Implementación en PyTorch del conformador en dominio de Fourier de Schiffner
 normalizaciones, y su `das_pw()` genera los objetivos de supervisión
 (`datos/precompute_schiffner_targets_fieldii.py`).
 
-⚠️ `das_pw()` acepta `tx_sign` y `tx_reference`. Los valores por defecto
+**Nota:** `das_pw()` acepta `tx_sign` y `tx_reference`. Los valores por defecto
 (`-1.0`, `"edge"`) reproducen la convención del dataset original de Schiffner;
 **para PICMUS y Field II la convención física es `tx_sign=+1.0,
 tx_reference="origin"`**.

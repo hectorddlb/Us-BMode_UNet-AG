@@ -74,7 +74,7 @@ planas** de los phantoms de reflectores puntuales, en
   `--range_start` / `--range_end` reparten los phantoms entre trabajos de un
   arreglo SLURM.
 
-⚠️ Este script reproduce los objetivos **tal como se usaron para entrenar** el
+**Nota:** este script reproduce los objetivos **tal como se usaron para entrenar** el
 modelo publicado: llama a `das_pw()` con la convención de transmisión por
 defecto (borde, −sin θ), no con la convención física de Field II (`tx_sign=+1`,
 `tx_reference="origin"`), y por eso portan estelas laterales en los ángulos
